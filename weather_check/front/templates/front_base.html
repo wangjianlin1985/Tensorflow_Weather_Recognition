@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--视口设置，适配移动端-->
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>识别系统{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sweetalert.css' %}">
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/xfzajax.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/zlalert.js' %}"></script>
+
+    {% block header %}
+
+    {% endblock %}
+
+</head>
+<body>
+<!--去掉导航条的圆角-->
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+
+        <!--定义菜单-->
+        <div class="collapse navbar-collapse" id="mymenu">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="{% url 'image_handle:index' %}">简介</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'image_handle:check' %}">检测</a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:8000/admin/" target="_blank">后台管理</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="main">
+    <div class="container">
+        {% block main-container %}
+
+        {% endblock %}
+    </div>
+</div>
+
+<div class="footer ">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-sm-6 col-lg-6">
+                <h4></h4>
+                <p>欢迎你加入，这里有你想要的.</p>
+            </div>
+            <div class="col-sm-6  col-lg-5 col-lg-offset-1">
+                <div class="row about">
+                    <div class="col-xs-3">
+                        <h4>关于</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="">关于我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <h4>联系方式</h4>
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <a href="">电子邮件</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row footer-bottom">
+        </div>
+    </div>
+</div>
+</body>
+</html>
